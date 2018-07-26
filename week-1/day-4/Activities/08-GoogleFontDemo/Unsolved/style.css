@@ -3,3 +3,27 @@
  **/
 
 /* Add in the Google Fonts of your choice */
+
+h1{
+    font-family: 'Kirang Haerang', cursive;
+    margin: 0%;
+    padding: 100px, 30px;
+    background-color: lightblue;
+}
+
+h3:hover{
+    background-color: lightblue;
+    text-decoration: underline black;
+}
+
+h3{
+    font-family: 'Eczar', serif;
+}
+
+h4{
+    font-family: 'Merienda', cursive;
+}
+
+p{
+    font-family: 'Indie Flower', cursive;
+}
