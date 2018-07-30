@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>conditional steak</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <script type="text/javascript">
+        
+        var year = prompt("What year were you born?")
+        
+        if (year === "" || year === null){
+            document.write("Please Reload the Page and Enter Birth Year")
+        } else{
+
+        var steak = confirm("Do you eat steak?");
+
+        if (steak && year <=1997){
+            alert("Here is a steak sandwich!");
+            alert("Try our Sake!")
+            document.write("Steak Heaven: Population - You   (Tipsy)");
+        } else if (year <=1997){
+            alert("Here is a Tofu Stir-Fry!");
+            alert("Sake!");
+            document.write("Drunk Tofu = Best Tofu");
+        } else if (steak){
+            alert("Here is a steak sandwich!");
+            alert("No Sake for you!");
+            document.write("Sober meals");
+        } else{
+            alert("Here is a Tofu Stir-Fry!");
+            alert("No Sake for you!");
+            document.write("Your Meal Sucks");
+        }
+        }
+            
+    </script>
+</body>
+</html>

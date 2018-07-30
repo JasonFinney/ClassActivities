@@ -22,6 +22,36 @@
     // Prints undefined... because the last index ("Owl") is 3.
     console.log(zooAnimals[4]);
 
+      // First way to do conditionals 
+      var color = 'blue';
+
+      if (color === 'blue'){
+        console.log("Sky");
+      } else if (color === 'brown'){
+        console.log("poop");
+      } else if (color === 'green'){
+        console.log("Grass")
+      } else {
+        console.log("Color Input Incorrectly")
+      }
+
+      // Second way to do conditionals 
+      switch (color) {
+        case 'blue':
+          console.log("Sky")
+          break;
+        case 'brown':
+          console.log("poop")
+          break;
+        case 'green':
+          console.log("Grass")
+          break;
+        default:
+          console.log("Color Input Incorrectly")
+          break;
+      }
+
+
     </script>
 
   </body>
