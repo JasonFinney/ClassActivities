@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="UTF-8">
+  <title>Rock Paper Scissors Part 2</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="rpsgame.css">
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-offset-2 col-md-8">
+        <div class="jumbotron">
+          <h2>You threw   <span id="user-text"><strong>...Nothing.</strong></span></h2>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+      <div class="row">
+        <div class="col-md-offset-2 col-md-8">
+          <div class="jumbotron">
+            <h2>Your Computer threw   <span id="Comp-text"><strong>...Nothing.</strong></span></h2>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <img src="9-RPS-example.png" alt=RPS />
+
+  <div id="game">
+
+  </div>
+
+  <script type="text/javascript">
+
+    var countdown = alert("3...")
+    var countdown = alert("2...")
+    var countdown = alert("1...")
+    var userGuess = prompt ("Shoot!")
+
+    if (userGuess === 'rock' || userGuess === 'scissors' || userGuess === 'paper') {
+
+    
+
+    // Creates an array that lists out all of the options (Rock, Paper, or Scissors).
+    var computerChoices = ['rock', 'paper', 'scissors'];
+
+    document.getElementById("user-text").textContent=userGuess;
+
+    // Randomly chooses a choice from the options array. This is the Computer's guess.
+    var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+
+    document.getElementById("Comp-text").textContent=computerGuess;
+
+
+    if (userGuess === 'rock' && computerGuess === 'rock') {
+        alert("Draw!    Throw Again!");
+    } 
+
+    else if (userGuess === 'rock' && computerGuess === 'paper') {
+        alert("You Lose!    Throw Again!");
+    }
+
+    else if (userGuess === 'rock' && computerGuess === 'scissors') {
+        alert("You Win!    Throw Again!");
+    } 
+
+    else if (userGuess === 'scissors' && computerGuess === 'paper') {
+        alert("You Win!    Throw Again!");
+    }
+
+    else if (userGuess === 'scissors' && computerGuess === 'scissors') {
+        alert("Draw!    Throw Again!");
+    } 
+
+    else if (userGuess === 'scissors' && computerGuess === 'rock') {
+        alert("You Lose!    Throw Again!");
+    }
+
+    else if (userGuess === 'paper' && computerGuess === 'paper') {
+        alert("Draw!    Throw Again!");
+    } 
+
+    else if (userGuess === 'paper' && computerGuess === 'scissors') {
+        alert("You Lose!    Throw Again!");
+    }
+
+    else if (userGuess === 'paper' && computerGuess === 'rock') {
+        alert("You Win!    Throw Again!");
+    } ;
+
+} else{
+    alert("Please enter 'rock', 'paper', or 'scissors'")
+}
+
+
+  </script>
+
+</body>
+
+</html>

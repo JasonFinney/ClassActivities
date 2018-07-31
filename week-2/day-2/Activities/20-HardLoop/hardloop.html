@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Hard Loop</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <script type="text/javascript">
+
+    var myFarm = ["chickens", "pigs", "cows", "horses", "ostriches"];
+
+    for (var index = 0; index < myFarm.length; index++) {
+        console.log(myFarm[index]);
+        var first_character = myFarm[index].charAt(0);
+        if (first_character=== 'c' || first_character === 'o'){
+            alert(myFarm[index] + " Starts with 'c' or 'o'!")
+        } else {
+            alert("You gotta HorsePig!")
+        }
+    } 
+
+    for (var i = 0; i < myFarm.length; i++) {
+        var animal = myFarm[i];
+
+        if(animal.charAt(0) === 'c' || animal.charAt(0) === 'o'){
+            alert("starts with 'c' or 'o'!")
+        } else{
+            alert("yo animal sucks")
+        }
+        
+    }
+
+
+
+
+    </script>
+</body>
+</html>
