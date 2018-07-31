@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Bands</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <script type="text/javascript">
+
+        var ans = prompt("What's your favorite Band?")
+
+        var bands = ["AC/DC", "Sabaton", "Bon Jovi"]
+
+        if (bands.indexOf(ans) === -1) {
+            alert("That's pretty lame")
+            document.write("You are bad and you should feel bad.")
+        } else {
+            alert("Yeah, they rock!")
+            document.write("You have good tastes in music")
+        }
+
+// <!-- 
+//         for (var index = 0; index < bands.length; index++) {
+//             if (bands[index] === ans) {
+//                 alert("Yeah, they rock!")
+//                 document.write("You have good tastes in music")
+//             } else{
+//                 alert("That's pretty lame")
+//                 document.write("You are bad and you should feel bad.")
+//             }  
+//         } -->
+
+</script>
+
+
+</body>
+</html>
