@@ -12,21 +12,76 @@
 
       // FUNCTIONS
       // ================================================================================
+      
 
       // Create a Function called "adder" that take three arguments (x, y, z).
       // The function should add the arguments together, and log the result to the console.
+      
+      function adder(x, y, z) {
+        if (x && y && z){
+        return x+y+z;
+        } else {
+          return "Invalid Arguments";
+        }
+      }
+      // Call the adder function here.
+      var sum = adder (1, 2, 3);
+      console.log(sum);
+
+      console.log("-------------------");
 
 
       // Create a Function called "multiplier" that takes three arguments (x, y, z).
       // The function should multiply the arguments, and log the result to the console.
+      
+      function multiplier(x, y, z){
+        if (x && y && z){
+        return x*y*z;
+        } else {
+          return "Invalid Arguments";
+        }
+      }
+      // Call the multiplier function here.  
+      var mult = multiplier(5, 5, 5,);
+      console.log(mult);
+
+      console.log("-------------------");
 
 
       // Create a Function called "isString" that takes three arguments (x, y, z).
       // "isString" determines if all three arguments are strings and logs an appropriate response to the console.
 
+      function isString(x, y, z){
+        if (typeof x === "string" && typeof y === "string" && typeof z === "string"){
+          console.log("Yes");
+        } else {
+          console.log("No");
+        }
+      }
+      // Call the isString function here.
+      isString ("true", "false", 7);
+      console.log("-------------------");
 
       // Create a Function called "vowelChecker" that takes in a single argument (x).
       // "vowlChecker" logs whether or not the input is a vowel.
+      
+      function vowelChecker(x){
+        if (typeof x === "string"){
+          var normalizedX = x.toLowerCase();
+          if (x === 'a' || x === 'e' || x === 'i' ||x === 'o' ||x === 'u' ||x === 'y'){
+            console.log("Yes, " + x + " is a vowel");
+          } else {
+            console.log("No, " + x + " is not a vowel");
+          }
+        } else {
+          console.log("No, " + x + " is not a vowel");
+        }
+  
+      }
+
+      // Call the vowelChecker function here.
+      vowelChecker(false);
+      console.log("-------------------");
 
 
       // BONUS
@@ -42,28 +97,13 @@
       // Add in the lines of code below necessary to call the functions we created above.
 
 
-      // Call the adder function here.
-
-
-      console.log("-------------------");
-
-
-      // Call the multiplier function here.
-
-
-      console.log("-------------------");
-
-
       // Call the isString function here.
 
 
       console.log("-------------------");
 
 
-      // Call the vowelChecker function here.
 
-
-      console.log("-------------------");
 
 
       // BONUS

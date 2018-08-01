@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-us">
+
 <head>
   <meta charset="UTF-8">
   <title>Rock Paper Scissors Part 2</title>
@@ -13,22 +14,40 @@
     <div class="row">
       <div class="col-md-offset-2 col-md-8">
         <div class="jumbotron">
-          <h2>You threw   <span id="user-text"><strong>...Nothing.</strong></span></h2>
+          <h2>You threw
+            <span id="user-text">
+              <strong>...Nothing.</strong>
+            </span>
+          </h2>
         </div>
       </div>
     </div>
   </div>
   <div class="container">
-      <div class="row">
-        <div class="col-md-offset-2 col-md-8">
-          <div class="jumbotron">
-            <h2>Your Computer threw   <span id="Comp-text"><strong>...Nothing.</strong></span></h2>
-          </div>
+    <div class="row">
+      <div class="col-md-offset-2 col-md-8">
+        <div class="jumbotron">
+          <h2>Your Computer threw
+            <span id="Comp-text">
+              <strong>...Nothing.</strong>
+            </span>
+          </h2>
         </div>
       </div>
     </div>
+  </div>
 
-    <img src="9-RPS-example.png" alt=RPS />
+  <div class="card" style="width: 18rem;">
+    <div class="col-md-offset-2 col-md-10">
+      <img class="card-img-top" src="9-RPS-example.png" alt="RPS">
+      <div class="card-body">
+        <h5 class="card-title">SCOREBOARD</h5>
+        <h6 id="userScor"></h6>
+        <h6 id="compScor"></h6>
+        <h6 id="drawScor"></h6>
+      </div>
+    </div>
+  </div>
 
   <div id="game">
 
@@ -39,63 +58,155 @@
     var countdown = alert("3...")
     var countdown = alert("2...")
     var countdown = alert("1...")
-    var userGuess = prompt ("Shoot!")
+    var userGuess = prompt("Shoot!")
+
+    var userScore = 0;
+    var compScore = 0;
+    var drawScore = 0;
+
+    document.getElementById("userScor").textContent = "User Score: " + userScore;
+    document.getElementById("compScor").textContent = "Computer Score: " + compScore;
+    document.getElementById("drawScor").textContent = "Ties: " + drawScore;
+
 
     if (userGuess === 'rock' || userGuess === 'scissors' || userGuess === 'paper') {
 
-    
+      // Creates an array that lists out all of the options (Rock, Paper, or Scissors).
+      var computerChoices = ['rock', 'paper', 'scissors'];
 
-    // Creates an array that lists out all of the options (Rock, Paper, or Scissors).
-    var computerChoices = ['rock', 'paper', 'scissors'];
+      document.getElementById("user-text").textContent = userGuess;
 
-    document.getElementById("user-text").textContent=userGuess;
+      // Randomly chooses a choice from the options array. This is the Computer's guess.
+      var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
 
-    // Randomly chooses a choice from the options array. This is the Computer's guess.
-    var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
-
-    document.getElementById("Comp-text").textContent=computerGuess;
+      document.getElementById("Comp-text").textContent = computerGuess;
 
 
-    if (userGuess === 'rock' && computerGuess === 'rock') {
+      if (userGuess === 'rock' && computerGuess === 'rock') {
         alert("Draw!    Throw Again!");
-    } 
+        drawScore++;
+      }
 
-    else if (userGuess === 'rock' && computerGuess === 'paper') {
+      else if (userGuess === 'rock' && computerGuess === 'paper') {
         alert("You Lose!    Throw Again!");
-    }
+        compScore++;
+      }
 
-    else if (userGuess === 'rock' && computerGuess === 'scissors') {
+      else if (userGuess === 'rock' && computerGuess === 'scissors') {
         alert("You Win!    Throw Again!");
-    } 
+        userScore++;
+      }
 
-    else if (userGuess === 'scissors' && computerGuess === 'paper') {
+      else if (userGuess === 'scissors' && computerGuess === 'paper') {
         alert("You Win!    Throw Again!");
-    }
+        userScore++;
+      }
 
-    else if (userGuess === 'scissors' && computerGuess === 'scissors') {
+      else if (userGuess === 'scissors' && computerGuess === 'scissors') {
         alert("Draw!    Throw Again!");
-    } 
+        drawScore++;
+      }
 
-    else if (userGuess === 'scissors' && computerGuess === 'rock') {
+      else if (userGuess === 'scissors' && computerGuess === 'rock') {
         alert("You Lose!    Throw Again!");
-    }
+        compScore++;
+      }
 
-    else if (userGuess === 'paper' && computerGuess === 'paper') {
+      else if (userGuess === 'paper' && computerGuess === 'paper') {
         alert("Draw!    Throw Again!");
-    } 
+        drawScore++;
+      }
 
-    else if (userGuess === 'paper' && computerGuess === 'scissors') {
+      else if (userGuess === 'paper' && computerGuess === 'scissors') {
         alert("You Lose!    Throw Again!");
+        compScore++;
+      }
+
+      else if (userGuess === 'paper' && computerGuess === 'rock') {
+        alert("You Win!    Throw Again!");
+        userScore++;
+      };
+
+    } else {
+      alert("Please enter 'rock', 'paper', or 'scissors'")
     }
 
-    else if (userGuess === 'paper' && computerGuess === 'rock') {
-        alert("You Win!    Throw Again!");
-    } ;
+    document.getElementById("userScor").textContent = "User Score: " + userScore;
+    document.getElementById("compScor").textContent = "Computer Score: " + compScore;
+    document.getElementById("drawScor").textContent = "Ties: " + drawScore;
 
-} else{
-    alert("Please enter 'rock', 'paper', or 'scissors'")
-}
+    document.onkeyup = function (event) {
+      var countdown = alert("3...")
+      var countdown = alert("2...")
+      var countdown = alert("1...")
+      var userGuess = prompt("Shoot!")
 
+      if (userGuess === 'rock' || userGuess === 'scissors' || userGuess === 'paper') {
+
+        // Creates an array that lists out all of the options (Rock, Paper, or Scissors).
+        var computerChoices = ['rock', 'paper', 'scissors'];
+
+        document.getElementById("user-text").textContent = userGuess;
+
+        // Randomly chooses a choice from the options array. This is the Computer's guess.
+        var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+
+        document.getElementById("Comp-text").textContent = computerGuess;
+
+
+        if (userGuess === 'rock' && computerGuess === 'rock') {
+          alert("Draw!    Throw Again!");
+          drawScore++;
+        }
+
+        else if (userGuess === 'rock' && computerGuess === 'paper') {
+          alert("You Lose!    Throw Again!");
+          compScore++;
+        }
+
+        else if (userGuess === 'rock' && computerGuess === 'scissors') {
+          alert("You Win!    Throw Again!");
+          userScore++;
+        }
+
+        else if (userGuess === 'scissors' && computerGuess === 'paper') {
+          alert("You Win!    Throw Again!");
+          userScore++;
+        }
+
+        else if (userGuess === 'scissors' && computerGuess === 'scissors') {
+          alert("Draw!    Throw Again!");
+          drawScore++;
+        }
+
+        else if (userGuess === 'scissors' && computerGuess === 'rock') {
+          alert("You Lose!    Throw Again!");
+          compScore++;
+        }
+
+        else if (userGuess === 'paper' && computerGuess === 'paper') {
+          alert("Draw!    Throw Again!");
+          drawScore++;
+        }
+
+        else if (userGuess === 'paper' && computerGuess === 'scissors') {
+          alert("You Lose!    Throw Again!");
+          compScore++;
+        }
+
+        else if (userGuess === 'paper' && computerGuess === 'rock') {
+          alert("You Win!    Throw Again!");
+          userScore++;
+        };
+
+      } else {
+        alert("Please enter 'rock', 'paper', or 'scissors'")
+      }
+
+      document.getElementById("userScor").textContent = "User Score: " + userScore;
+      document.getElementById("compScor").textContent = "Computer Score: " + compScore;
+      document.getElementById("drawScor").textContent = "Ties: " + drawScore;
+    }
 
   </script>
 
