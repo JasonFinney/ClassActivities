@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Inactivity</title>
+    <script src='https://code.jquery.com/jquery-3.3.1.min.js' integrity='sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8='
+        crossorigin='anonymous'></script>
+    <style>
+        h1 {
+            font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+            font-size: 24px;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: bold;
+            line-height: 26.4px;
+        }
+
+        section {
+            font-size: 2em;
+            font-weight: bolder;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>This is a bank website or something</h1>
+    <section>
+        Countdown Clock
+        <div></div>
+    </section>
+    <script>
+        var sec = 3;
+        $('div').text(sec);
+        var timer = setInterval(function () {
+            sec--;
+            $('div').text(sec);
+
+            if (sec === 0) {
+                alert("You have been logged out due to inactivity");
+            };
+            if (sec < 0) {
+                $('div').text("Press any key to Reset Timer");
+            };
+        }, 1000);
+
+        var pageListener = createTimer();
+
+        $(document).keyup(function () {
+            sec = 3;
+            alert("Oh you're still here?");
+            clearTimeout(pageListener);
+            pageListener = createTimer();
+        });
+
+        function createTimer() {
+            return setTimeout(function () {
+                (alert("You have been logged out due to inactivity"))
+            }, 3000);
+        };
+    </script>
+</body>
+
+</html>
