@@ -1,6 +1,8 @@
 
 // Bubble Sort Interview Questions:
 
+// Be sure to break this down into smaller parts before
+// diving into the code
 
 // Write a function that sorts an array of numbers in order.
 // You can do this with the Bubble Sort algorithm.
@@ -14,9 +16,6 @@
 
 // When the user clicks the `button` in index.html,
 // the sorted result should be displayed in the `#result` div.
-
-// DO NOT USE JQUERY TO SELECT ELEMENTS. ONLY USE VANILLA JS.
-
 
 var unsortedArr = [
   1, 326, 251, 24, 284, 364, 287, 74, 89,

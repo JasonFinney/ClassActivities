@@ -28,6 +28,26 @@
 
         $(".container").append("<h1>" + "Jason Finney" + "</h1>");
 
+        var h2 = $("<h2>");
+        h2.text("Subtitle");
+        $(".container").append(h2);
+
+        // windows key + ; === emojis pop up 🤣
+
+        // $("h2").text("🤞");
+
+        var emojis = ["😁", "😂", "🤣", "😆", "😊", "😏", "🙄", "🤔", "😲", "🤨", "😒", "😫", "😢"];
+        var currentEmoji = 0;
+        var intervalId = setInterval(update, 1000);
+
+        function update() {
+            if (currentEmoji > emojis.length - 1) {
+                currentEmoji = 0;
+            }
+            $("h2").text(emojis[currentEmoji]);
+            currentEmoji++;
+        }
+
     </script>
 
 

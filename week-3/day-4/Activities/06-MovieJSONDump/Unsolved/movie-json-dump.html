@@ -17,7 +17,8 @@
     <!-- This form will be where users input data about the movies -->
     <form id="movie-form">
       <label for="movie-input">Search for a movie</label>
-      <input type="text" id="movie-input"><br>
+      <input type="text" id="movie-input">
+      <br>
 
       <!-- This button will trigger our AJAX call -->
       <input id="find-movie" type="submit" value="Movie Search">
@@ -26,7 +27,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript">
       // This .on("click") function will trigger the AJAX Call
-      $("#find-movie").on("click", function(event) {
+      $("#find-movie").on("click", function (event) {
 
         // Preventing the submit button from trying to submit the form
         // We're optionally using a form so the user may hit Enter to search instead of clicking the button
@@ -48,6 +49,27 @@
         // CODE GOES HERE
 
         // =================================================================
+        $.ajax({
+          url: queryURL,
+          method: "GET"
+        }).then(function (response) {
+          console.log(response);
+          // var urJSON = JSON.parse(response);
+
+          var keys = Object.keys(response);
+          console.log(keys);
+          for (let i = 0; i < keys.length; i++) {
+            var key = keys[i];
+            $("#movie-view").append("<p>" + key + ": " + response[key] + "</p>");
+          }
+          // To get it to just display block text below
+          // var myJSON = JSON.stringify(response);
+          // $("#movie-view").append(myJSON);
+        });
+
+
+
+
       });
     </script>
   </div>

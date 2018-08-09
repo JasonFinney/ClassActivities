@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Question Game</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <script src='https://code.jquery.com/jquery-3.3.1.min.js' integrity='sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8='
+        crossorigin='anonymous'></script>
+</head>
+
+<body>
+    <div>
+        <h1>Did you get it Right???</h1>
+
+        <h2>Score: </h2>
+    </div>
+
+    <script>
+        var array = [
+            { q: "Face1", a: "t" },
+            { q: "Face2", a: "f" },
+            { q: "Face3", a: "t" },
+            { q: "Face4", a: "f" },
+            { q: "Face5", a: "t" },
+            { q: "Face6", a: "f" },
+            { q: "Face7", a: "t" },
+            { q: "Face8", a: "t" },
+            { q: "Face9", a: "f" },
+            { q: "Face10", a: "f" },
+        ];
+
+        var Score = 0;
+
+        for (let i = 0; i < array.length; i++) {
+            console.log(array[i].q);
+            var ans = prompt(array[i].q + "? type 't' for 'true or 'f' for false");
+            if (ans === array[i].a) {
+                alert("Correct!");
+                $("div").append("<h6>" + "question " + i + " was answered correctly" + "</h6>");
+                Score++;
+            } else {
+                alert("Wrong.");
+                $("div").append("<h6>" + "question " + i + " was answered incorrectly" + "</h6>")
+            }
+        };
+
+        $("h2").append(" " + Score);
+
+    </script>
+</body>
+
+</html>

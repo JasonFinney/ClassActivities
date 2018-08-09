@@ -23,8 +23,9 @@
     <div id="buttons-view"></div>
 
     <form id="movie-form">
-      <label for="movie-input">Add a Movie Bro</label>
-      <input type="text" id="movie-input"><br>
+      <label for="movie-input">Add a Movie 🎥</label>
+      <input type="text" id="movie-input">
+      <br>
 
       <!-- Button triggers new movie to be added -->
       <input id="add-movie" type="submit" value="Add a Movie Bro">
@@ -48,7 +49,7 @@
         $.ajax({
           url: queryURL,
           method: "GET"
-        }).then(function(response) {
+        }).then(function (response) {
 
           // Creates a div to hold the movie
           // Retrieves the Rating Data
@@ -91,7 +92,7 @@
       }
 
       // This function handles events where the add movie button is clicked
-      $("#add-movie").on("click", function(event) {
+      $("#add-movie").on("click", function (event) {
         event.preventDefault();
         // This line of code will grab the input from the textbox
         var movie = $("#movie-input").val().trim();

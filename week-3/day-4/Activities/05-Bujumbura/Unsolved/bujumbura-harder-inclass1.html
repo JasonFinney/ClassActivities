@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Bujumbura Data</title>
+    <style>
+        img {
+            height: 200px;
+            width: 200px;
+            padding: 20px;
+        }
+
+        h1 {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Retrieved data will be dumped here -->
+    <div class="city"></div>
+    <div class="wind"></div>
+    <div class="humidity"></div>
+    <div class="tempK"></div>
+    <div class="tempF"></div>
+    <img src="https://media-cdn.tripadvisor.com/media/photo-s/01/37/0e/0a/bujumbura-centre-ville.jpg" alt="Bujumbura">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        var APIKey1 = "90deed4a81de156d7b12fa470d92c4d3";
+        var APIKey = "31ab0f09bcee10613976168c301161f4";
+        var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=Bujumbura,Burundi&appid=" + APIKey1;
+
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        }).then(function (response) {
+            console.log(response);
+            $(".city").append("<h1>" + "Bujumbura" + "</h1>");
+            $(".wind").text("Wind Speed: " + response.wind.speed);
+            $(".humidity").text("Humidity: " + response.main.humidity);
+            $(".tempK").text("Temp in K: " + Math.round(response.main.temp) + "K");
+            var temp = ((response.main.temp - 273.15) * 1.8) + 32;
+            $(".tempF").append("Temp in F: " + Math.round(temp) + "&#x2109;");
+
+        });
+
+    // Create CODE HERE to Log the queryURL
+    // Create CODE HERE to log the resulting object
+    // Create CODE HERE to transfer content to HTML
+
+
+    // Create CODE HERE to calculate the temperature (converted from Kelvin)
+    // Hint: To convert from Kelvin to Fahrenheit: F = (K - 273.15) * 1.80 + 32
+    // Create CODE HERE to dump the temperature content into HTML
+    // Things to accomplish:
+    // Get an API Key from OpenWeatherMap API
+    // Create an AJAX call to retrieve data Log the data in console
+    // Log the data in HTML
+    // Scream Ushindi (victory in Swahili)! at the top of your lungs
+    </script>
+
+</body>
+
+</html>
