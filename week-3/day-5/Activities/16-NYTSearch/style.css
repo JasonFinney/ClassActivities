@@ -1,0 +1,27 @@
+body {
+    background-color: #fafafa;
+    margin-top: 15px;
+}
+
+.jumbotron {
+    background-color: pink !important;
+    color: white;
+    font-weight: 400px;
+}
+
+.searchPar {
+    background-color: black !important;
+}
+
+.panel-heading {
+    color: white;
+    font-weight: 400px;
+}
+
+.panel-title {
+    color: white;
+    font-weight: 400px;
+}
+#footer {
+    color: black;
+}
