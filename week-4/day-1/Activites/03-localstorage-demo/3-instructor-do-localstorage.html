@@ -2,44 +2,47 @@
 
 <html lang="en-us">
 
-  <head>
+<head>
 
-    <meta charset="UTF-8">
-    <title>Local Storage Example</title>
+  <meta charset="UTF-8">
+  <title>Local Storage Example</title>
 
-  </head>
+</head>
 
-  <style>
-    #input-name, #greeting {
-      font-weight: 700;
-      font-size: 2em;
+<style>
+  #input-name,
+  #greeting {
+    font-weight: 700;
+    font-size: 2em;
 
-    }
-  </style>
-  <body>
+  }
+</style>
 
-    <!-- Title -->
-    <h1>Guest Book</h1>
-    <!-- Input Form -->
+<body>
 
-    <form>
-      <span id="input-name">
-        Your Name: <input id="your-name" type="text">
-        <input id="save-name" value="Save" type="submit">
-      </span>
-    </form>
+  <!-- Title -->
+  <h1>Guest Book</h1>
+  <!-- Input Form -->
 
-    <!-- Print Name -->
-    <span id="greeting"></span>
+  <form>
+    <span id="input-name">
+      Your Name:
+      <input id="your-name" type="text">
+      <input id="save-name" value="Save" type="submit">
+    </span>
+  </form>
 
-    <!-- jQuery -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!-- Print Name -->
+  <span id="greeting"></span>
 
-    <!-- Script -->
-    <script>
+  <!-- jQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <!-- Script -->
+  <script>
 
     // When users click "save-name"
-    $("#save-name").on("click", function(event) {
+    $("#save-name").on("click", function (event) {
       // This line prevents the page from refreshing when a user hits "enter".
       event.preventDefault();
 
@@ -63,8 +66,8 @@
     // By default (upon load) show the name stored in localStorage using "localStorage.getItem"
     $("#greeting").text(localStorage.getItem("name"));
 
-    </script>
+  </script>
 
-  </body>
+</body>
 
 </html>

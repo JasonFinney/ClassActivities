@@ -6,9 +6,6 @@
   <meta charset="UTF-8">
   <title>CountDown Button with Firebase!</title>
 
-  <!-- Firebase Reference -->
-  <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
-
 </head>
 
 <body>
@@ -21,10 +18,23 @@
 
   <!-- jQuery -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.3.1/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    // <!-- Firebase Reference -->
+    var config = {
+      apiKey: "AIzaSyAAc21ATnc0FUMo3BJTblydgAmjqODxC74",
+      authDomain: "first-project-299d8.firebaseapp.com",
+      databaseURL: "https://first-project-299d8.firebaseio.com",
+      projectId: "first-project-299d8",
+      storageBucket: "first-project-299d8.appspot.com",
+      messagingSenderId: "508899034818"
+    };
+    firebase.initializeApp(config);
+  </script>
 
   <!-- Script -->
   <script src="logic.js"></script>
-
 </body>
 
 </html>

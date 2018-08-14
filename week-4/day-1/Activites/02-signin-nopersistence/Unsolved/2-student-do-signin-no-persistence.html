@@ -84,16 +84,25 @@
     // ========================================= START CODING BELOW!!
 
     // Capture Button Click
-    $("#add-user").on("click", function(event) {
+    $("#add-user").on("click", function (event) {
       event.preventDefault();
 
       // Capture User Inputs and store them into variables
-
+      var Name = $("#name-input").val().trim();
+      var Email = $("#email-input").val().trim();
+      var Age = $("#age-input").val().trim();
+      var Commentvar = $("#comment-input").val().trim();
 
       // Console log each of the user inputs to confirm we are receiving them correctly
-
+      console.log(Name); console.log(Email); console.log(Age); console.log(Commentvar);
 
       // Output all of the new information into the relevant HTML sections
+      $("#name-display").text(Name);
+      $("#email-display").text(Email);
+      $("#age-display").text(Age);
+      $("#comment-display").text(Commentvar);
+
+
     });
   </script>
 

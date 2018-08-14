@@ -6,12 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Firebase HTML</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
 </head>
 
 <body>
-
-
-
+    <div class="container">
+        <h1>FireBase 🔥</h1>
+        <input id="name-input" placeholder="Name" type="text" class="form-control">
+        <input id="age-input" placeholder="Age" type="text" class="form-control">
+        <!-- <button id="save-button" class="btn btn-success">Save</button> -->
+        <button id="save-button" class="btn btn-success">Add</button>
+        <h3>Bios</h3>
+        <div id="users">
+            <h4 id="name-display">Name:</h4>
+            <h4 id="age-display">Age:</h4>
+        </div>
+    </div>
     <script src='https://code.jquery.com/jquery-3.3.1.min.js' integrity='sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8='
         crossorigin='anonymous'></script>
     <script src="https://www.gstatic.com/firebasejs/5.3.1/firebase.js"></script>
