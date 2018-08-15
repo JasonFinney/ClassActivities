@@ -28,7 +28,7 @@
       <br>
 
       <!-- Button triggers new movie to be added -->
-      <input id="add-movie" type="submit" value="Add a Movie Bro">
+      <input id="add-movie" type="submit" value="Add a Movie 🎥">
     </form>
 
     <!-- Movies will get dumped here -->
@@ -52,6 +52,33 @@
         }).then(function (response) {
 
           // YOUR CODE GOES HERE!!!
+          console.log(response);
+          var poster = $("<img>");
+          poster.attr("src", response.Poster);
+          /**
+            <div>
+              <img src="movie poster" />
+              <p>Rating</p> ✅
+              <p>Release Date</p>
+              <p>Plot</p>
+            </div>
+          **/
+          var movieDiv = $("<div>");
+          var pRating = $("<p>");
+          pRating.text(response.Rated);
+
+          var pReleaseDate = $("<p>");
+          pReleaseDate.text(response.Released);
+
+          var pPlot = $("<p>");
+          pPlot.text(response.Plot);
+
+          movieDiv.append(poster);
+          movieDiv.append(pRating);
+          movieDiv.append(pReleaseDate);
+          movieDiv.append(pPlot);
+
+          $("#movies-view").append(movieDiv);
 
         });
 
@@ -89,7 +116,7 @@
 
         // The movie from the textbox is then added to our array
         movies.push(movie);
-
+        $("#movie-input").val("");
         // Calling renderButtons which handles the processing of our movie array
         renderButtons();
 

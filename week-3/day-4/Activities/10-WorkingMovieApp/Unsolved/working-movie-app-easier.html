@@ -51,6 +51,28 @@
           method: "GET"
         }).then(function (response) {
 
+          console.log(response);
+          var poster = $("<img>");
+          poster.attr("src", response.Poster);
+          $("movies-view").append(poster);
+
+          //
+
+          var movieDiv = $("<div>");
+          var pRating = $("<p>");
+          pRating.text(response.Rated);
+          var pReleaseDate = $("<p>");
+          var pPlot = $("<p>");
+          pPlot.text(response.Plot);
+
+          movieDiv.append(poster);
+          movieDiv.append(pRating);
+          movieDiv.append(pReleaseDate);
+          movieDiv.append(pPlot);
+
+          $("#movies-view")
+
+
           // Creates a div to hold the movie
           // Retrieves the Rating Data
           // Creates an element to have the rating displayed

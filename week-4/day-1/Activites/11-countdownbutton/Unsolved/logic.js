@@ -4,7 +4,7 @@
 
 // Create a variable to reference the database
 // var database = ...
-var database = firebase.database();
+
 
 // Use the below initialValue
 var initialValue = 100;
@@ -15,30 +15,11 @@ var clickCounter = initialValue;
 // --------------------------------------------------------------
 
 // At the initial load and on subsequent data value changes, get a snapshot of the current data. (I.E FIREBASE HERE)
-var config = {
-  apiKey: "AIzaSyAAc21ATnc0FUMo3BJTblydgAmjqODxC74",
-  authDomain: "first-project-299d8.firebaseapp.com",
-  databaseURL: "https://first-project-299d8.firebaseio.com",
-  projectId: "first-project-299d8",
-  storageBucket: "first-project-299d8.appspot.com",
-  messagingSenderId: "508899034818"
-};
-firebase.initializeApp(config);
 // This callback keeps the page updated when a value changes in firebase.
 // HINT: Assuming 'database' is our database variable, use...
 // database.ref().on("value", function(snapshot)) {}
-database.ref().on("value", function (snapshot) {
-  console.log(snapshot.val());
-  clickCounter = snapshot.val();
-  $("#click-value").text(snapshot.val().clickCount);
-  clickCounter = snapshot.val().clickCount;
-}, function (errorObject) {
-  console.log("The read failed: " + errorObject.code);
-});
-
 
 // We are now inside our .on function...
-
 
 // Console.log the "snapshot" value (a point-in-time representation of the database)
 // This "snapshot" allows the page to get the most current values in firebase.
@@ -57,7 +38,7 @@ database.ref().on("value", function (snapshot) {
 // --------------------------------------------------------------
 
 // Whenever a user clicks the click button
-$("#click-button").on("click", function () {
+$("#click-button").on("click", function() {
 
   // Reduce the clickCounter by 1
   clickCounter--;
@@ -80,7 +61,7 @@ $("#click-button").on("click", function () {
 });
 
 // Whenever a user clicks the restart button
-$("#restart-button").on("click", function () {
+$("#restart-button").on("click", function() {
 
   // Set the clickCounter back to initialValue
   clickCounter = initialValue;

@@ -17,7 +17,8 @@
     <!-- This form will be where users input data about the movies -->
     <form id="movie-form">
       <label for="movie-input">Search for a movie</label>
-      <input type="text" id="movie-input"><br>
+      <input type="text" id="movie-input">
+      <br>
 
       <!-- This button will trigger our AJAX call -->
       <input id="find-movie" type="submit" value="Movie Search">
@@ -26,7 +27,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript">
       // This .on("click") function will trigger the AJAX Call
-      $("#find-movie").on("click", function(event) {
+      $("#find-movie").on("click", function (event) {
 
         // Preventing the submit button from trying to submit the form
         // We're optionally using a form so the user may hit Enter to search instead of clicking the button
@@ -44,6 +45,24 @@
         // YOUR CODE GOES IN THESE DASHES. DO NOT MANUALLY EDIT THE HTML ABOVE
 
         // =================================================================
+        // 1. CONNECT TO THE API!!!!! (5 mins)
+        $.ajax({
+          url: queryURL,
+          method: "GET"
+        }).then(function (response) {
+          console.log(response);
+
+          var keys = Object.keys(response);
+
+          for (var i = 0; i < keys.length; i++) {
+            // APPEND the value of each key from the object
+            // to the div
+            // you'll need to work with []........😍😍😍
+            $("#movie-view").append("<p>" + keys[i] + ": " + response[keys[i]] + "</p>");
+
+          }
+
+        });
 
         // CODE GOES HERE
 

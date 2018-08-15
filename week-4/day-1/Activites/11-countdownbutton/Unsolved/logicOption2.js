@@ -30,7 +30,7 @@ var clickCounter = initialValue;
 // --------------------------------------------------------------
 
 // Whenever a user clicks the click button
-$("#click-button").on("click", function () {
+$("#click-button").on("click", function() {
 
   // Reduce the clickCounter by 1
 
@@ -47,7 +47,7 @@ $("#click-button").on("click", function () {
 });
 
 // Whenever a user clicks the restart button
-$("#restart-button").on("click", function () {
+$("#restart-button").on("click", function() {
 
   // Set the clickCounter back to initialValue
 

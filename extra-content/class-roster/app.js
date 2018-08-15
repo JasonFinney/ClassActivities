@@ -17,8 +17,20 @@ $(document).ready(function () {
         var tr = $("<tr>");
         // create td
         var td = $("<td>");
+        // add a random image from this url:
+        // https://api.adorable.io/avatars/285/cost@adorable.png
+
+        // instead of using the email cost@adorable.png
+        var apiUrl = "https://api.adorable.io/avatars/285/" + studentName + "@adorable.png";
+
+        var img = $("<img>");
+
+        img.attr("src", apiUrl);
+        img.addClass("avatar");
+
+        td.append(img);
         // set the contents of the td
-        td.text(studentName);
+        td.append(studentName);
 
         // append the td to the tr
         tr.append(td);
@@ -28,6 +40,7 @@ $(document).ready(function () {
         $("input").val("");
         // update student enrollment count
         updateStudentEnrollmentCount();
+
     });
 
 
