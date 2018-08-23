@@ -4,4 +4,4 @@ var bandList = require("./bands.js");
 // Loop through band list and print out details
 for (var key in bandList) {
   console.log("A " + key + " band is " + bandList[key] + ".");
-}
+};

@@ -17,7 +17,6 @@ var config = {
 
 firebase.initializeApp(config);
 
-var database = firebase.database();
 
 // 2. Button for adding Employees
 $("#add-employee-btn").on("click", function (event) {
@@ -104,3 +103,55 @@ database.ref().on("child_added", function (childSnapshot) {
 
 // We know that this is 15 months.
 // Now we will create code in moment.js to confirm that any attempt we use meets this test case
+
+
+
+$(".backToHome").on("click", function () {
+  event.preventDefault();
+  var imgURL = $(".content").attr("src");
+  var comment = $("#review-input").val().trim();
+  var classes = $(".content").attr("class");
+  commentArray.push(comment);
+  if (flag === true) {
+      database.ref().child("comment").push().key;
+
+  } else {
+      database.ref().child(uniqueID).set({
+          imgURL,
+          currentRating,
+          comment,
+          classes,
+          timesRated
+      });
+  };
+
+  $('.currentReview').append("<strong>" + currentRating + " stars!</strong><br>");
+  setTimeout(function () {
+      $('#rating-display').removeClass('hidden');
+      $('#image-display').addClass('hidden');
+  }, 2000);
+  var imgURL = $(".content").attr("src");
+  console.log(imgURL);
+  var ref = firebase.database().ref();
+  ref.orderByChild("imgURL").equalTo(imgURL).once("value", function (snapshot) {
+      var snap = snapshot.val();
+      console.log(snap);
+      commentArray = [];
+
+      if (snapshot.val()) {
+          console.log("exists!");
+          snapshot.ref.update({ "-LKSyhPg72ADMFynmfWw/currentRating": averageRating });
+          Number(timesRated);
+          timesRated++;
+          flag = true;
+
+
+          // we had this image already so update it with new rating average and increment the timesRated
+      } else {
+          console.log("Doesn't exist!")
+          uniqueID++;
+          var ratingAve;
+          timesRated = 1;
+
+          // this is a new image, create a new record for it
+      };
