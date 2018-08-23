@@ -9,8 +9,7 @@
 <body>
   <button data-person="Arnold Schwarzenegger">I'll be back</button>
   <button data-person="Michael J Fox">
-    My happiness grows in direct proportionto my acceptance,
-    and in inverse proportion to my expectations.
+    My happiness grows in direct proportionto my acceptance, and in inverse proportion to my expectations.
   </button>
   <!-- STEP TWO: between the dashed lines below
         * add three more buttons
@@ -23,14 +22,11 @@
     Love yourself first and everything else falls into line.
   </button>
   <button data-person="Taylor Swift">
-    If you're horrible to me, I'm going to write a song about it,
-    and you won't like it. That's how I operate.
+    If you're horrible to me, I'm going to write a song about it, and you won't like it. That's how I operate.
   </button>
   <button data-person="Samuel Jackson">
-    Far better is it to dare mighty things, to win glorious triumphs,
-    even though checkered by failure... than to rank with those poor spirits who
-    neither enjoy nor suffer much, because they live in a gray twilight that
-    knows not victory nor defeat.
+    Far better is it to dare mighty things, to win glorious triumphs, even though checkered by failure... than to rank with those
+    poor spirits who neither enjoy nor suffer much, because they live in a gray twilight that knows not victory nor defeat.
   </button>
 
   <div id="gifs-appear-here">
@@ -39,7 +35,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript">
     // Event listener for all button elements
-    $("button").on("click", function() {
+    $("button").on("click", function () {
       // In this case, the "this" keyword refers to the button that was clicked
       var person = $(this).attr("data-person");
 
@@ -53,7 +49,7 @@
         method: "GET"
       })
         // After the data comes back from the API
-        .then(function(response) {
+        .then(function (response) {
           // Storing an array of results in the results variable
           var results = response.data;
 
