@@ -1,15 +1,14 @@
 {
-  "name": "userprompt",
+  "name": "26-inquirer_users",
   "version": "1.0.0",
-  "main": "userprompt.js",
+  "description": "* [`userprompt.js`](Unsolved/userprompt.js)",
+  "main": "userprompt-inclass1.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "inquirer": "^1.0.2"
-  },
-  "keywords": [],
-  "description": ""
+    "inquirer": "^1.2.3"
+  }
 }

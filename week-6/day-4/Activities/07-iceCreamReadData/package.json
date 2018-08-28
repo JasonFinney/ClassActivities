@@ -1,15 +1,15 @@
 {
-  "name": "userprompt",
+  "name": "ice-cream-db-read-data",
   "version": "1.0.0",
-  "main": "userprompt.js",
+  "description": "",
+  "main": "iceCreamReadData.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "inquirer": "^1.0.2"
-  },
-  "keywords": [],
-  "description": ""
+    "mysql": "^2.13.0"
+  }
 }

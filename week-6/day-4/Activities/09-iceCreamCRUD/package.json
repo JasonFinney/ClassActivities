@@ -1,15 +1,14 @@
 {
-  "name": "userprompt",
+  "name": "ice-cream-crud",
   "version": "1.0.0",
-  "main": "userprompt.js",
+  "description": "",
+  "main": "iceCreamCRUD.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "inquirer": "^1.0.2"
-  },
-  "keywords": [],
-  "description": ""
+    "mysql": "^2.13.0"
+  }
 }
