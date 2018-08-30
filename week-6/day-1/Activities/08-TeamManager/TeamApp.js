@@ -146,6 +146,7 @@ var scoreTeam1 = 0;
 var scoreTeam2 = 0;
 
 var roundNumber = 0;
+
 var PlayGame = function (roundNumber) {
     if (roundNumber < 5) {
         roundNumber++;
@@ -192,8 +193,9 @@ var PlayGame = function (roundNumber) {
                         choices: subs,
                     },
                 ]).then(function (person) {
+                    var number = 0;
                     for (let i = 0; i < starters.length; i++) {
-                        if (starters[i] === person.out) {
+                        if (starters[i].name === person.out) {
                             bench = starters[i];
                             number = i;
                         };
@@ -213,41 +215,37 @@ var PlayGame = function (roundNumber) {
 
     } else {
         endGame();
-        end = false;
     };
 };
-var end = true;
 function endGame() {
-    if (end === true) {
-        console.log("\n--------endGame(): FINAL SCORE: " + "\nYour Score: " + scoreTeam1 + "\nOppenent's Score: " + scoreTeam2 + " --------\n");
-        if (scoreTeam1 > scoreTeam2) {
-            console.log("Good game, everyone!\nYour current starters' stats have improved!");
-            for (var i = 0; i < starters.length; i++) {
-                starters[i].goodGame();
-            };
+    console.log("\n--------endGame(): FINAL SCORE: " + "\nYour Score: " + scoreTeam1 + "\nOppenent's Score: " + scoreTeam2 + " --------\n");
+    if (scoreTeam1 > scoreTeam2) {
+        console.log("Good game, everyone!\nYour current starters' stats have improved!");
+        for (var i = 0; i < starters.length; i++) {
+            starters[i].goodGame();
         };
-        if (scoreTeam1 < scoreTeam2) {
-            console.log("That was a poor performance!\nYour current starters' stats have decreased!");
-            for (var i = 0; i < starters.length; i++) {
-                starters[i].badGame();
-            };
-        };
-        if (scoreTeam1 === scoreTeam2) {
-            console.log("It was a tie game! Not good. Not bad.");
-        };
-        inquirer.prompt({
-            name: "again",
-            type: "confirm",
-            message: "Would you like to play another match?"
-        }).then(function (answer) {
-            if (answer.again === true) {
-                roundNumber = 0;
-                PlayGame();
-            } else {
-                console.log("Come back again soon!");
-            };
-        });
     };
+    if (scoreTeam1 < scoreTeam2) {
+        console.log("That was a poor performance!\nYour current starters' stats have decreased!");
+        for (var i = 0; i < starters.length; i++) {
+            starters[i].badGame();
+        };
+    };
+    if (scoreTeam1 === scoreTeam2) {
+        console.log("It was a tie game! Not good. Not bad.");
+    };
+    inquirer.prompt({
+        name: "again",
+        type: "confirm",
+        message: "Would you like to play another match?"
+    }).then(function (answer) {
+        if (answer.again === true) {
+            roundNumber = 0;
+            PlayGame(roundNumber);
+        } else {
+            console.log("Come back again soon!");
+        };
+    });
 };
 
 
