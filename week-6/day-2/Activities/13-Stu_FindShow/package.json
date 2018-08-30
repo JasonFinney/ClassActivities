@@ -1,0 +1,15 @@
+{
+  "name": "tv-tuner",
+  "version": "1.0.0",
+  "description": "In this activity we will be adding functionality to search the TV Maze API to find a show passed in as a command line argument.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "request": "^2.88.0"
+  },
+  "keywords": []
+}

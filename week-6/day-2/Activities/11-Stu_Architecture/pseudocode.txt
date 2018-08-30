@@ -1,0 +1,15 @@
+create js
+connect tvmaze api 
+npm init
+install npm
+
+"request" from api
+
+"require" from npm
+
+process userInputs for catagory and show
+^throw error
+
+capture JSON response and parse the data
+
+ask ta for all the things that don't work

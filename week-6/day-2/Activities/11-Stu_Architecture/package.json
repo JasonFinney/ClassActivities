@@ -1,0 +1,12 @@
+{
+  "name": "11-Stu_Architecture",
+  "version": "1.0.0",
+  "description": "In this activity we will sketch/psuedo-code out the high level architecture of the TV app.",
+  "main": "StuApp.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

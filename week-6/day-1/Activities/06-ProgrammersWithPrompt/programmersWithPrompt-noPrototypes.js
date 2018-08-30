@@ -8,9 +8,9 @@ function Programmer(name, position, age, language) {
   this.age = age;
   this.language = language;
   // creates the printInfo method and applies it to all programmer objects
-  this.printInfo = function() {
+  this.printInfo = function () {
     console.log("Name: " + this.name + "\nPosition: " + this.position +
-    "\nAge: " + this.age + "\nLanguages: " + this.language);
+      "\nAge: " + this.age + "\nLanguages: " + this.language);
   };
 }
 
@@ -30,7 +30,7 @@ inquirer.prompt([
     name: "language",
     message: "What is your favorite programming language?"
   }
-]).then(function(answers) {
+]).then(function (answers) {
   // initializes the variable newProgrammer to be a programmer object which will take
   // in all of the user's answers to the questions above
   var newProgrammer = new Programmer(answers.name, answers.position, answers.age, answers.language);

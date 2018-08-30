@@ -1,0 +1,19 @@
+
+-----------------------New Show Search-----------------------
+Name: The Walking Dead
+Genres: Drama Action Horror
+Ave Rating: 8.3
+Network: AMC
+Summary: <p><b>The Walking Dead</b> tells the story of the months and years that follow after a zombie apocalypse. It follows a group of survivors, led by former police officer Rick Grimes, who travel in search of a safe and secure home. As the world overrun by the dead takes its toll on the survivors, their interpersonal conflicts present a greater danger to their continuing survival than the walkers that roam the country. Over time, the characters are changed by the constant exposure to death and some grow willing to do anything to survive.</p><p>Based on the comic book series of the same name by Robert Kirkman, Tony Moore, and Charlie Adlard.</p>
+-----------------------New Show Search-----------------------
+Name: The Walking Dead
+Genres: Drama Action Horror
+Ave Rating: 8.3
+Network: AMC
+Summary: <p><b>The Walking Dead</b> tells the story of the months and years that follow after a zombie apocalypse. It follows a group of survivors, led by former police officer Rick Grimes, who travel in search of a safe and secure home. As the world overrun by the dead takes its toll on the survivors, their interpersonal conflicts present a greater danger to their continuing survival than the walkers that roam the country. Over time, the characters are changed by the constant exposure to death and some grow willing to do anything to survive.</p><p>Based on the comic book series of the same name by Robert Kirkman, Tony Moore, and Charlie Adlard.</p>
+-----------------------New Actor Search-----------------------
+Name: Brad Pitt
+Birthday: 1963-12-18
+Country: United States
+Gender: Male
+URL: http://www.tvmaze.com/people/45790/brad-pitt
