@@ -10,18 +10,18 @@ var connection = mysql.createConnection({
   user: "root",
 
   // Your password
-  password: "",
+  password: "root",
   database: "ice_creamDB"
 });
 
-connection.connect(function(err) {
+connection.connect(function (err) {
   if (err) throw err;
   console.log("connected as id " + connection.threadId);
   afterConnection();
 });
 
 function afterConnection() {
-  connection.query("SELECT * FROM products", function(err, res) {
+  connection.query("SELECT * FROM products", function (err, res) {
     if (err) throw err;
     console.log(res);
     connection.end();

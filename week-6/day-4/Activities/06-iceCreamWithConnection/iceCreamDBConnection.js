@@ -10,11 +10,11 @@ var connection = mysql.createConnection({
   user: "root",
 
   // Your password
-  password: "",
+  password: "root",
   database: "ice_creamDB"
 });
 
-connection.connect(function(err) {
+connection.connect(function (err) {
   if (err) throw err;
   console.log("connected as id " + connection.threadId);
   connection.end();
