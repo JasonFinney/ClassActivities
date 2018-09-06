@@ -31,15 +31,15 @@ var darthmaul = {
 
 // Routes
 // ===========================================================
-app.get("/", function(req, res) {
+app.get("/", function (req, res) {
   res.send("Welcome to the Star Wars Page!");
 });
 
-app.get("/yoda", function(req, res) {
+app.get("/yoda", function (req, res) {
   res.json(yoda);
 });
 
-app.get("/darthmaul", function(req, res) {
+app.get("/darthmaul", function (req, res) {
   res.json(darthmaul);
 });
 
@@ -53,6 +53,6 @@ app.get("/darthmaul", function(req, res) {
 
 // Listener
 // ===========================================================
-app.listen(PORT, function() {
+app.listen(PORT, function () {
   console.log("App listening on PORT " + PORT);
 });

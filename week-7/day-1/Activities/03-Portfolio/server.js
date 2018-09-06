@@ -5,7 +5,7 @@ var PORT = 8080;
 var server = http.createServer(handleRequest);
 
 // Start our server
-server.listen(PORT, function() {
+server.listen(PORT, function () {
   // Callback triggered when server is successfully listening. Hurray!
   console.log("Server listening on: http://localhost:" + PORT);
 });
@@ -19,14 +19,14 @@ function handleRequest(req, res) {
   // Depending on the URL, display a different HTML file.
   switch (path) {
 
-  case "/":
-    return displayRoot(path, req, res);
+    case "/":
+      return displayRoot(path, req, res);
 
-  case "/portfolio":
-    return displayPortfolio(path, req, res);
+    case "/portfolio":
+      return displayPortfolio(path, req, res);
 
-  default:
-    return display404(path, req, res);
+    default:
+      return display404(path, req, res);
   }
 }
 
