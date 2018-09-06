@@ -12,7 +12,7 @@ var server = http.createServer(handleRequest);
 function handleRequest(req, res) {
 
   // Here we use the fs package to read our index.html file
-  fs.readFile(__dirname + "/index.html", function(err, data) {
+  fs.readFile(__dirname + "/index.html", function (err, data) {
 
     // We then respond to the client with the HTML page by specifically telling the browser that we are delivering
     // an html file.
@@ -22,6 +22,6 @@ function handleRequest(req, res) {
 }
 
 // Starts our server
-server.listen(PORT, function() {
+server.listen(PORT, function () {
   console.log("Server is listening on PORT: " + PORT);
 });
