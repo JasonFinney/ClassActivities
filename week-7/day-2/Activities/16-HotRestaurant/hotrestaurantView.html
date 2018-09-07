@@ -8,13 +8,110 @@
     <title>Hot Restaurant</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
         crossorigin="anonymous">
+    <style>
+        .titlecenter {
+            text-align: center
+        }
+    </style>
 </head>
 
 <body>
-
+    <div class="container-fluid">
+        <div class="row jumbo">
+            <div class="col-md-10 offset-md-1 text-center">
+                <div class="jumbotron">
+                    <h1 class="display">🔥 Hot Restaurant</h1>
+                    <hr class="my-4">
+                    <h6>Book your seat before they are all gone!</h6>
+                    <button type="button" class="btn btn-primary btn1">Make Reservation</button>
+                    <button type="button" class="btn btn-secondary btn2">Show Existing Reservations</button>
+                </div>
+            </div>
+        </div>
+        <div class="row create hidden">
+            <div class="col-md-10 offset-md-1">
+                <form>
+                    <div class="form-group">
+                        <label for="routeName">Name</label>
+                        <input class="form-control" id="routeName" placeholder="Enter Your Party's Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="party-size">Party Size</label>
+                        <input class="form-control" id="party-size" placeholder="2">
+                    </div>
+                    <div class="form-group">
+                        <label for="time">What time will you be joining us?</label>
+                        <input class="form-control" id="time" placeholder="20:00">
+                    </div>
+                    <div class="form-group">
+                        <label for="date">What day will you be joining us?</label>
+                        <input class="form-control" id="date" placeholder="09/10/2018">
+                    </div>
+                    <button type="submit" class="btn btn-primary btn3">Make Reservation</button>
+                </form>
+            </div>
+        </div>
+        <div class="row existing hidden">
+            <div class="col-md-10 offset-md-1">
+                <ul class="list-group target">
+                    <li class="list-group-item titlecenter">Existing Reservations</li>
+                </ul>
+            </div>
+        </div>
+    </div>
     <script src='https://code.jquery.com/jquery-3.3.1.min.js' integrity='sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8='
         crossorigin='anonymous'></script>
-    <script src="hotrestaurant-inclasspublic.js"></script>
+    <script type="text/javascript">
+        $(".hidden").hide();
+        $(".btn1").on("click", function () {
+            console.log("created!");
+            $(".create").show();
+            $(".existing").hide();
+        });
+
+        $(".btn2").on("click", function () {
+            console.log("existing!");
+            $(".existing").show();
+            $(".create").hide();
+            $.ajax({
+                method: "GET",
+                url: "localhost:9000/api/reservations"
+            }).then(function (data) {
+                console.log(data);
+                var list = $("<ul>");
+                data.forEach(reservations => {
+                    list.append(`<li>Reservation Name: ${reservations.name}</li>`);
+                    list.append(`<li>Party Size: ${reservations.party}</li>`);
+                    list.append(`<li>Date: ${reservations.date}</li>`);
+                    list.append(`<li>Time: ${reservations.time}</li>`);
+                    $(".target").append(list);
+                });
+            })
+        });
+
+        $(".btn3").on("click", function (event) {
+            event.preventDefault();
+            $.ajax({
+                method: "POST",
+                url: "localhost:9000/api/reserve",
+                data: {
+                    routeName: $("#routeName").val().trim(),
+                    name: $("#routeName").val().trim(),
+                    party: $("#party-size").val().trim(),
+                    date: $("#date").val().trim(),
+                    time: $("#time").val().trim()
+                }
+            }).then(function (data) {
+
+            });
+        });
+
+        // $.post("/api/reserve", newReservation).then(function (data) {
+        //     console.log("post successful", data);
+        //     alert("Your Reservation is in the Books! See you Soon!")
+        // });
+
+    </script>
 </body>
 
 </html>
