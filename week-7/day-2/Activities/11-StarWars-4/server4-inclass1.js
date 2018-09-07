@@ -29,17 +29,17 @@ var characters = [{
 
 // Routes
 // ===========================================================
-app.get("/", function(req, res) {
+app.get("/", function (req, res) {
   res.send("Welcome to the Star Wars Page!");
 });
 
 // Displays all characters
-app.get("/api/characters", function(req, res) {
+app.get("/api/characters", function (req, res) {
   return res.json(characters);
 });
 
 // Displays a single character, or shows "No character found"
-app.get("/api/characters/:character", function(req, res) {
+app.get("/api/characters/:character", function (req, res) {
   // Grab the selected parameter
   var chosen = req.params.character;
   console.log(chosen);
@@ -50,6 +50,7 @@ app.get("/api/characters/:character", function(req, res) {
       return res.json(characters[i]);
     }
   }
+  characters.filter((character) => chosen === character.routeName);
 
   // Otherwise display "No character found"
   return res.send("No character found");
@@ -57,6 +58,6 @@ app.get("/api/characters/:character", function(req, res) {
 
 // Listener
 // ===========================================================
-app.listen(PORT, function() {
+app.listen(PORT, function () {
   console.log("App listening on PORT " + PORT);
 });
