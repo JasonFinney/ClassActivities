@@ -78,15 +78,16 @@
                 url: "localhost:9000/api/reservations"
             }).then(function (data) {
                 console.log(data);
-                var list = $("<ul>");
-                data.forEach(reservations => {
-                    list.append(`<li>Reservation Name: ${reservations.name}</li>`);
-                    list.append(`<li>Party Size: ${reservations.party}</li>`);
-                    list.append(`<li>Date: ${reservations.date}</li>`);
-                    list.append(`<li>Time: ${reservations.time}</li>`);
+                for (let i = 0; i < data.length; i++) {
+                    var list = $("<ul>");
+                    list.attr('class', "list-group-item");
+                    list.append(`<li>Reservation Name: ${data[i].name}</li>`);
+                    list.append(`<li>Party Size: ${data[i].party}</li>`);
+                    list.append(`<li>Date: ${data[i].date}</li>`);
+                    list.append(`<li>Time: ${data[i].time}</li>`);
                     $(".target").append(list);
-                });
-            })
+                }
+            });
         });
 
         $(".btn3").on("click", function (event) {

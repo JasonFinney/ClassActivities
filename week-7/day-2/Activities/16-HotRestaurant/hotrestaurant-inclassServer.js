@@ -30,7 +30,7 @@ app.get("/", function (req, res) {
 });
 
 app.get("/api/reservations", function (req, res) {
-    return res.json(reservations);
+    return res.json(data);
 });
 
 app.post("/api/reserve", function (req, res) {
