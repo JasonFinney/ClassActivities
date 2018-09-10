@@ -14,12 +14,12 @@ var connection = mysql.createConnection({
   host: "localhost",
   port: 3306,
   user: "root",
-  password: "",
+  password: "root",
   database: "wizard_schools_db"
 });
 
 // Initiate MySQL Connection.
-connection.connect(function(err) {
+connection.connect(function (err) {
   if (err) {
     console.error("error connecting: " + err.stack);
     return;
@@ -28,11 +28,11 @@ connection.connect(function(err) {
 });
 
 // Routes
-app.get("/", function(req, res) {
+app.get("/", function (req, res) {
 
   // If the main route is hit, then we initiate a SQL query to grab all records.
   // All of the resulting records are stored in the variable "result."
-  connection.query("SELECT * FROM schools", function(err, result) {
+  connection.query("SELECT * FROM schools", function (err, result) {
 
     // We then begin building out HTML elements for the page.
     var html = "<h1> Magical Schools </h1>";
@@ -55,7 +55,7 @@ app.get("/", function(req, res) {
 });
 
 // Start our server so that it can begin listening to client requests.
-app.listen(PORT, function() {
+app.listen(PORT, function () {
   // Log (server-side) when our server has started
   console.log("Server listening on: http://localhost:" + PORT);
 });
