@@ -1,12 +1,7 @@
 var express = require("express");
 var app = express();
-
-// Set the port of our application
-// process.env.PORT lets the port be set by Heroku
-var PORT = process.env.PORT || 8080;
-
+var PORT = process.env.PORT || 8080
 var exphbs = require("express-handlebars");
-
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
@@ -34,29 +29,34 @@ var animals = [
   }
 ];
 
-app.get("/dog", function(req, res) {
-  // Handlebars requires an object to be sent to the dog.handlebars file. Lucky for us, animals[0] is an object!
-
-  // 1. Send the dog object from the animals array to the dog.handlebars file.
-
+app.get("/dog", function (req, res) {
+  res.render("dog", animals[0]);
 });
 
-app.get("/all-pets", function(req, res) {
-  // Handlebars requires an object to be sent to the index.handlebars file.
-
-  // 2. Send the animals to the index.handlebars file. Remember that animals is an array and not an object.
-
+app.get("/all-pets", function (req, res) {
+  var data = {
+    animals: []
+  };
+  for (let i = 0; i < animals.length; i++) {
+    if (animals[i].pet) {
+      data.animals.push(animals[i]);
+    };
+  };
+  res.render("index", data);
 });
 
-app.get("/all-non-pets", function(req, res) {
-  // Handlebars requires an object to be sent to the index.handlebars file.
-
-  // 3. Send all the animals that are not pets to the index.handlebars file.
-
+app.get("/all-non-pets", function (req, res) {
+  var data = {
+    animals: []
+  };
+  for (let i = 0; i < animals.length; i++) {
+    if (!animals[i].pet) {
+      data.animals.push(animals[i]);
+    };
+  };
+  return res.render("index", data);
 });
 
-// Start our server so that it can begin listening to client requests.
-app.listen(PORT, function() {
-  // Log (server-side) when our server has started
+app.listen(PORT, function () {
   console.log("Server listening on: http://localhost:" + PORT);
 });
