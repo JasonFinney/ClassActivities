@@ -16,22 +16,24 @@ app.set("view engine", "handlebars");
 // Data
 var lunches = [
   {
-    lunch: "Beet & Goat Cheese Salad with minestrone soup."
+    lunch: "Beet & Goat Cheese Salad with minestrone soup.",
+    cost: "$ 5.00"
   }, {
-    lunch: "Pizza, two double veggie burgers, fries with a Big Gulp"
+    lunch: "Pizza, two double veggie burgers, fries with a Big Gulp",
+    cost: "$ 7.00"
   }
 ];
 
 // Routes
-app.get("/weekday", function(req, res) {
+app.get("/weekday", function (req, res) {
   res.render("index", lunches[0]);
 });
 
-app.get("/weekend", function(req, res) {
+app.get("/weekend", function (req, res) {
   res.render("index", lunches[1]);
 });
 
-app.get("/lunches", function(req, res) {
+app.get("/lunches", function (req, res) {
   res.render("all-lunches", {
     foods: lunches,
     eater: "david"
@@ -39,7 +41,7 @@ app.get("/lunches", function(req, res) {
 });
 
 // Start our server so that it can begin listening to client requests.
-app.listen(PORT, function() {
+app.listen(PORT, function () {
   // Log (server-side) when our server has started
   console.log("Server listening on: http://localhost:" + PORT);
 });
