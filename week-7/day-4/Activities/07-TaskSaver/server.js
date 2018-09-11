@@ -22,11 +22,11 @@ var connection = mysql.createConnection({
   host: "localhost",
   port: 3306,
   user: "root",
-  password: "",
+  password: "root",
   database: "task_saver_db"
 });
 
-connection.connect(function(err) {
+connection.connect(function (err) {
   if (err) {
     console.error("error connecting: " + err.stack);
     return;
@@ -36,8 +36,8 @@ connection.connect(function(err) {
 });
 
 // Root get route
-app.get("/", function(req, res) {
-  connection.query("SELECT * FROM tasks;", function(err, data) {
+app.get("/", function (req, res) {
+  connection.query("SELECT * FROM tasks;", function (err, data) {
     if (err) throw err;
 
     // Test it
@@ -51,7 +51,7 @@ app.get("/", function(req, res) {
 });
 
 // Post route -> back to home
-app.post("/", function(req, res) {
+app.post("/", function (req, res) {
   // Test it
   // console.log('You sent, ' + req.body.task);
 
@@ -61,7 +61,7 @@ app.post("/", function(req, res) {
   // When using the MySQL package, we'd use ?s in place of any values to be inserted, which are then swapped out with corresponding elements in the array
   // This helps us avoid an exploit known as SQL injection which we'd be open to if we used string concatenation
   // https://en.wikipedia.org/wiki/SQL_injection
-  connection.query("INSERT INTO tasks (task) VALUES (?)", [req.body.task], function(err, result) {
+  connection.query("INSERT INTO tasks (task) VALUES (?)", [req.body.task], function (err, result) {
     if (err) throw err;
 
     res.redirect("/");
@@ -69,7 +69,7 @@ app.post("/", function(req, res) {
 });
 
 // Start our server so that it can begin listening to client requests.
-app.listen(PORT, function() {
+app.listen(PORT, function () {
   // Log (server-side) when our server has started
   console.log("Server listening on: http://localhost:" + PORT);
 });
