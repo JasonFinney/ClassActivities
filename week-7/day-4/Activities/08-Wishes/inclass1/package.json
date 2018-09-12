@@ -1,11 +1,13 @@
 {
-  "name": "exercise3_day_planner",
+  "name": "inclass1",
   "version": "1.0.0",
+  "description": "",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -13,7 +15,5 @@
     "express": "^4.13.4",
     "express-handlebars": "^3.0.0",
     "mysql": "^2.10.2"
-  },
-  "keywords": [],
-  "description": ""
+  }
 }
