@@ -4,9 +4,10 @@
 
 <ul>
   {{#each cats}}
-    {{#unless sleepy}}
-      {{> cats/cat-block sleep=true}}
-    {{/unless}}
+  {{#unless sleepy}}
+  {{> cats/cat-block sleep=true}}
+  <button data-catid="{{this.id}}" class="delCat">Delete Cat</button>
+  {{/unless}}
   {{/each}}
 </ul>
 
@@ -14,9 +15,9 @@
 
 <ul>
   {{#each cats}}
-    {{#if sleepy}}
-      {{> cats/cat-block sleep=false}}
-    {{/if}}
+  {{#if sleepy}}
+  {{> cats/cat-block sleep=false}}
+  {{/if}}
   {{/each}}
 </ul>
 
@@ -36,3 +37,14 @@
 
   <button type="submit">Add Cat</button>
 </form>
+
+<script type="text/javascript">
+  $(".delCat").on("click", function (event) {
+    var id = #(this).attr("data-catid");
+    $.ajax("/api/cats/" + id, {
+      method: "DELETE"
+    }).then(function () {
+      location.reload();
+    });
+  });
+</script>
