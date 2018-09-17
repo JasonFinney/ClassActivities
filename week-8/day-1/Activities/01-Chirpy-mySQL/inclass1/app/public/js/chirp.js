@@ -8,3 +8,11 @@
 
 
 // When user chirps
+$.post("/api/new", newChrip)
+.then(function(){
+    var row = $("<div>");
+    
+})
+
+$("#author").val("");
+$("#chirp").val("");
