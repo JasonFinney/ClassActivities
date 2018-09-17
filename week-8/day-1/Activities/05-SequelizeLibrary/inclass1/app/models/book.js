@@ -14,3 +14,17 @@
 // Sync model with DB
 
 // Export the book model for other files to use
+
+var Sequelize = require("sequelize");
+var sequelize = require("../config/connection.js");
+
+var Book = sequelize.define("books", {
+    title: Sequelize.STRING,
+    author: Sequelize.STRING,
+    genre: Sequelize.STRING,
+    pages: Sequelize.INTEGER
+});
+
+Book.sync();
+
+module.exports = Book;
