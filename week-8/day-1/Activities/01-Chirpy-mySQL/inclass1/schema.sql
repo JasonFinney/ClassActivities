@@ -1,5 +1,5 @@
-CREATE DATABASE chirpy;
-USE chirpy;
+CREATE DATABASE sequelize_chirpy;
+USE sequelize_chirpy;
 
 CREATE TABLE chirps
 (
