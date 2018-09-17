@@ -1,0 +1,22 @@
+{
+  "name": "starwars-express",
+  "version": "1.0.0",
+  "description": "* Install the sequelize and mysql2 npm packages.\r * Delete the orm from config. In your app folder, create a model folder with a character.js file in the model\r * In character.js, model out the character table, as detailed in the schema.sql file located in the root of this project directory.\r * Remove all references to the old orm file and replace it with character.js\r * Use Sequelize methods in place of the orm calls to retrieve and insert data.\r * Update connection.js to use sequelize instead of the mysql package.",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4",
+    "mysql": "^2.10.2",
+    "mysql2": "^1.6.1",
+    "sequelize": "^4.38.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "watch": "nodemon server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "keywords": []
+}
