@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
   // Getting a reference to the input field where user adds a new todo
   var $newItemInput = $("input.new-item");
   // Our new todos will go inside the todoContainer
@@ -29,7 +29,7 @@ $(document).ready(function() {
 
   // This function grabs todos from the database and updates the view
   function getTodos() {
-    $.get("/api/todos", function(data) {
+    $.get("/api/todos", function (data) {
       todos = data;
       initializeRows();
     });
@@ -58,7 +58,11 @@ $(document).ready(function() {
   function toggleComplete(event) {
     event.stopPropagation();
     var todo = $(this).parent().data("todo");
-    todo.complete = !todo.complete;
+    if (todo.complete) {
+      todo.complete = false;
+    } else {
+      todo.complete = true;
+    };
     updateTodo(todo);
   }
 
@@ -77,7 +81,7 @@ $(document).ready(function() {
   function updateTodo(todo) {
     $.ajax({
       method: "PUT",
-      url: "/api/todos",
+      url: "/api/todos/:id",
       data: todo
     }).then(getTodos);
   }
@@ -113,7 +117,7 @@ $(document).ready(function() {
     $newInputRow.find("input.edit").css("display", "none");
     $newInputRow.data("todo", todo);
     if (todo.complete) {
-      $newInputRow.find("span").css("text-decoration", "line-through");
+      $newInputRow.find("span");
     }
     return $newInputRow;
   }
