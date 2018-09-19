@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+</head>
+
+<body>
+    <!-- 
+        1. Create inputs for the bio (name, age)
+        1a. Create a save button
+        2. using jquery get the values of these inputs
+        when the user clicks save, store it in the database
+
+    -->
+    <div class="container">
+        <h1>Firebase 🔥</h1>
+        <input id="nameInput" placeholder="Name" type="text" class="form-control">
+        <input id="ageInput" placeholder="Age" type="text" class="form-control">
+        <button id="saveButton" class="btn btn-success">Add
+            <i class="fa fa-plus"></i>
+        </button>
+        <!--
+
+            Display the name and age from the bio
+            on the screen
+        -->
+        <div id="users">
+
+        </div>
+    </div>
+    <script src='https://code.jquery.com/jquery-3.3.1.min.js' integrity='sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8='
+        crossorigin='anonymous'></script>
+    <script src="https://www.gstatic.com/firebasejs/5.3.1/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyAkdb0H9YbmiYMczpuKvqfpLWhKOqY0LWc",
+            authDomain: "in-class-project-ft.firebaseapp.com",
+            databaseURL: "https://in-class-project-ft.firebaseio.com",
+            projectId: "in-class-project-ft",
+            storageBucket: "in-class-project-ft.appspot.com",
+            messagingSenderId: "507134339907"
+        };
+        firebase.initializeApp(config);
+    </script>
+    <script src="firebase.js"></script>
+</body>
+
+</html>
