@@ -1,0 +1,12 @@
+{
+  "name": "03-Stu_Eslint-Example",
+  "version": "1.0.0",
+  "description": "In this example we will use eslint to fix issues with the calculator app from the previous activity.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
