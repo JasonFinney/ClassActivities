@@ -6,7 +6,7 @@ var cheerio = require("cheerio");
 var request = require("request");
 
 // Make a request call to grab the HTML body from the site of your choice
-request("http://www.nytimes.com", function(error, response, html) {
+request("http://www.nytimes.com", function (error, response, html) {
 
   // Load the HTML into cheerio and save it to a variable
   // '$' becomes a shorthand for cheerio's selector commands, much like jQuery's '$'
@@ -17,8 +17,10 @@ request("http://www.nytimes.com", function(error, response, html) {
 
   // Select each element in the HTML body from which you want information.
   // NOTE: Cheerio selectors function similarly to jQuery's selectors,
-  // but be sure to visit the package's npm page to see how it works
-  $("h2.story-heading").each(function(i, element) {
+  // but be sure to visit the package's npm page to see how it works\
+
+  $("h2.esl82me2").each(function (i, element) {
+    console.log("we're in!", $(this).html());
 
     var link = $(element).children().attr("href");
     var title = $(element).children().text();
