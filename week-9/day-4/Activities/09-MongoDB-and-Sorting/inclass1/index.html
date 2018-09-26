@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Nothing</title>
+</head>
+
+<body>
+    <h1>Hello World!</h1>
+
+    <button id="Animals">Animals</button>
+    <button id="AnimalsSort">Animals Sorted by Name</button>
+    <button id="Keepers">Zookeepers</button>
+
+    <script src='https://code.jquery.com/jquery-3.3.1.min.js' integrity='sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8='
+        crossorigin='anonymous'></script>
+
+    <script>
+        $(document).on("click", "#Animals", function () {
+            $.ajax({
+                method: "GET",
+                url: "/animals"
+            }).then(function (results) {
+                console.log(results);
+            });
+        });
+        $(document).on("click", "#AnimalsSort", function () {
+            $.ajax({
+                method: "GET",
+                url: "/sort"
+            }).then(function (results) {
+                console.log(results);
+            });
+        });
+        $(document).on("click", "#Keepers", function () {
+            $.ajax({
+                method: "GET",
+                url: "/keepers"
+            }).then(function (results) {
+                console.log(results);
+            });
+        });
+    </script>
+</body>
+
+</html>
