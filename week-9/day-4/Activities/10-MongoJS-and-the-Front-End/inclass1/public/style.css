@@ -1,6 +1,9 @@
 body {
   background-color: #6a5;
 }
+.row{
+  text-align: center;
+}
 
 table,
 td {

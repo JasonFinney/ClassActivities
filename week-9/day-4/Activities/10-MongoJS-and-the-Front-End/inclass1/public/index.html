@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Animals</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="row row1">
+      <div class="col-xl-10 offset-xl-1">
+        <h1>Checkout my Zoo!</h1>
+      </div>
+    </div>
+    <div class="row row2">
+      <div class="col-xl-10 offset-xl-1">
+        <div id="buttons">
+          <button id="weight-sort">Sort By Weight</button>
+          <button id="name-sort">Sort By Name</button>
+        </div>
+      </div>
+    </div>
+    <div class="row row3">
+      <div class="col-xl-10 offset-xl-1">
+        <table id="results">
+          <thead>
+            <tr>
+              <th id="animal-name">Name</th>
+              <th id="animal-type">Kind</th>
+              <th id="animal-age">age</th>
+              <th id="animal-weight">Weight</th>
+            </tr>
+          </thead>
+          <tbody id="face">
+            <!-- Results from DB here -->
+            <tr>
+              <td id="td-animal-name"></td>
+              <td id="td-animal-type"></td>
+              <td id="td-animal-age"></td>
+              <td id="td-animal-weight"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="app.js"></script>
+</body>
+
+</html>
