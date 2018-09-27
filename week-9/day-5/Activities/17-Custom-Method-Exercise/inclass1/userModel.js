@@ -40,11 +40,14 @@ var UserSchema = new Schema({
   fullName: String
 });
 // 1. setFullName: sets the current user's `fullName` property to their lastName appended to their `firstName`
-
+UserSchema.methods.fullName = function () {
+  var fullName = this.firstName + this.lastName;
+  return fullName;
+};
 // 2. lastUpdatedDate: sets the current user's `lastUpdated` property to Date.now()
-
-// This creates our model from the above schema, using mongoose's model method
+UserSchema.methods.lastUpdatedDate = function () {
+  this.lastUpdated = Date.now();
+  return this.lastUpdated;
+};
 var User = mongoose.model("User", UserSchema);
-
-// Export the User model
 module.exports = User;
