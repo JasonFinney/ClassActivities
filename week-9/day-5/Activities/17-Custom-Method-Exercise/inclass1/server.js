@@ -11,8 +11,8 @@ app.use(express.static("public"));
 mongoose.connect("mongodb://localhost/custommethoddb", { useNewUrlParser: true });
 app.post("/submit", function (req, res) {
   var user = new User(req.body);
-  setFullName();
-  lastUpdatedDate();
+  user.setFullName();
+  user.lastUpdatedDate();
   User.create(user)
     .then(function (dbUser) {
       res.json(dbUser);
