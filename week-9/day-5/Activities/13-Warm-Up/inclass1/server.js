@@ -26,7 +26,7 @@ var collections = ["books"];
 
 // Hook our mongojs config to the db var
 var db = mongojs(databaseUrl, collections);
-db.on("error", function(error) {
+db.on("error", function (error) {
   console.log("Database Error:", error);
 });
 
@@ -38,35 +38,85 @@ db.on("error", function(error) {
 // -/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/
 
 // Post a book to the mongoose database
-app.post("/submit", function(req, res) {
+app.post("/submit", function (req, res) {
+  console.log("you're in here!");
   // Save the request body as an object called book
   var book = req.body;
+  console.log(book);
 
   // If we want the object to have a boolean value of false,
   // we have to do it here, because the ajax post will convert it
   // to a string instead of a boolean
   book.read = false;
+  db.books.save(book, function (err, data) {
+    if (err) {
+      console.log(err);
+    } else {
+      res.send(data);
+    };
+  });
 });
 
 // Find all books marked as read
-app.get("/read", function(req, res) {});
+app.get("/read", function (req, res) {
+  console.log("you're in here!");
+  var book = req.body;
+  console.log(book);
+  db.books.find(book, function (err, data) {
+    if (err) {
+      console.log(err);
+    } else {
+      res.send(data);
+    };
+  });
+});
 
 // Find all books marked as unread
-app.get("/unread", function(req, res) {});
+app.get("/unread", function (req, res) { });
 
 // Mark a book as having been read
-app.get("/markread/:id", function(req, res) {
+app.get("/markread/:id", function (req, res) {
   // Remember: when searching by an id, the id needs to be passed in
   // as (mongojs.ObjectId(IdYouWantToFind))
+  db.books.update(
+    {
+      _id: mongojs.ObjectID(req.params.id)
+    },
+    {
+      $set: { read: true }
+    },
+    function (err, data) {
+      if (err) {
+        console.log(err);
+      } else {
+        res.send(data);
+      };
+    }
+  );
 });
 
 // Mark a book as having been not read
-app.get("/markunread/:id", function(req, res) {
+app.get("/markunread/:id", function (req, res) {
   // Remember: when searching by an id, the id needs to be passed in
   // as (mongojs.ObjectId(IdYouWantToFind))
+  db.books.update(
+    {
+      _id: mongojs.ObjectID(req.params.id)
+    },
+    {
+      $set: { read: false }
+    },
+    function (err, data) {
+      if (err) {
+        console.log(err);
+      } else {
+        res.send(data);
+      };
+    }
+  );
 });
 
 // Listen on port 3000
-app.listen(3000, function() {
+app.listen(3000, function () {
   console.log("App running on port 3000!");
 });
