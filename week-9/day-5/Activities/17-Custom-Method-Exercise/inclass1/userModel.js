@@ -40,9 +40,9 @@ var UserSchema = new Schema({
   fullName: String
 });
 // 1. setFullName: sets the current user's `fullName` property to their lastName appended to their `firstName`
-UserSchema.methods.fullName = function () {
-  var fullName = this.firstName + this.lastName;
-  return fullName;
+UserSchema.methods.setFullName = function () {
+  this.fullName = this.firstName + this.lastName;
+  return this.fullName;
 };
 // 2. lastUpdatedDate: sets the current user's `lastUpdated` property to Date.now()
 UserSchema.methods.lastUpdatedDate = function () {
