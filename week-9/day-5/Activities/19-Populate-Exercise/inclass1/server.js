@@ -16,7 +16,6 @@ db.User.create({ name: "Ernest Hemingway" })
   .catch(function (err) {
     console.log(err.message);
   });
-// Route for retrieving all Notes from the db
 app.get("/notes", function (req, res) {
   db.Note.find({})
     .then(function (dbNote) {
@@ -26,7 +25,6 @@ app.get("/notes", function (req, res) {
       res.json(err);
     });
 });
-// Route for retrieving all Users from the db
 app.get("/user", function (req, res) {
   db.User.find({})
     .then(function (dbUser) {
@@ -36,7 +34,6 @@ app.get("/user", function (req, res) {
       res.json(err);
     });
 });
-// Route for saving a new Note to the db and associating it with a User
 app.post("/submit", function (req, res) {
   db.Note.create(req.body)
     .then(function (dbNote) {
@@ -49,13 +46,14 @@ app.post("/submit", function (req, res) {
       res.json(err);
     });
 });
-// Route to see what user looks like WITH populating
 app.get("/populateduser", function (req, res) {
-  // TODO
-  // =====
-  // Write the query to grab the documents from the User collection,
-  // and populate them with any associated Notes.
-  // TIP: Check the models out to see how the Notes refers to the User
+  db.User.find({})
+    .populate("notes")
+    .then(function (dbUser) {
+      res.json(dbUser);
+    }).catch(function (err) {
+      res.json(err);
+    });
 });
 app.listen(PORT, function () {
   console.log("App running on port " + PORT + "!");
