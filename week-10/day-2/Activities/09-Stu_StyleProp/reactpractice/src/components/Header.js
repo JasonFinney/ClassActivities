@@ -1,12 +1,21 @@
 import React from "react";
 import "../styles/Header.css";
-
-// By importing the Header.css file, it is added to the DOM whenever this component loads
-
-const Header = () => (
-  <header className="header">
-    <h1>Welcome</h1>
-  </header>
-);
-
+const Header = () => {
+  const myStyle = {
+    headerStyle: {
+      backgroundColor: 'red',
+      height: '200px'
+    },
+    textStyle: {
+      justifyContent: 'center',
+      color: 'white',
+      fontSize: '100px'
+    }
+  }
+  return (
+    <header style={myStyle.headerStyle}>
+      <h1 style={myStyle.textStyle}>Welcome</h1>
+    </header>
+  );
+};
 export default Header;
