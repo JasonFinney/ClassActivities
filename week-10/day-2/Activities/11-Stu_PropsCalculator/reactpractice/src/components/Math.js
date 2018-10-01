@@ -2,11 +2,25 @@ import React from "react";
 
 const Math = (props) => {
     console.log(props);
-    return (
-        <div className={`math math-${props.type || ""}`}>
+    let value;
+    switch (props.operator) {
+        case "+":
+            value = props.num1 + props.num2;
+            break;
+        case "-":
+            value = props.num1 - props.num2;
+            break;
+        case "*":
+            value = props.num1 * props.num2;
+            break;
+        case "/":
+            value = props.num1 / props.num2;
+            break;
+        default:
+            value = NaN;
+    }
 
-        </div>
-    );
+    return <section><br></br>{value}</section>
 };
 
 export default Math;
