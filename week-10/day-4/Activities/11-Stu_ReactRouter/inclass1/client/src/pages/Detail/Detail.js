@@ -12,6 +12,13 @@ class Detail extends Component {
   // e.g. http://localhost:3000/books/:id
   // The book id for this route can be accessed using this.props.match.params.id
 
+  componentDidMount() {
+    API.getBook(this.props.match.params.id)
+      .then(res => {
+        this.setState({ book: res.data })
+      })
+  }
+
   render() {
     return (
       <Container fluid>
