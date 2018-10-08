@@ -1,10 +1,10 @@
-import React, { Component } from "react";
+import React from "react";
 import FriendCard from "./components/FriendCard";
 import Wrapper from "./components/Wrapper";
 import friends from "./friends.json";
 import "./App.css";
 
-class App extends Component {
+class App extends React.Component {
   state = {
     friends
   };
